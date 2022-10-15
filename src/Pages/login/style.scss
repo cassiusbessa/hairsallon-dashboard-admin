@@ -1,0 +1,9 @@
+@import "../../Styles/variables";
+@import "../../Styles/functions";
+
+
+.Login {
+	background-color: $--bg--primary--color;
+	@include size(100vw, 100vh);
+	@include flexAlignment();
+}

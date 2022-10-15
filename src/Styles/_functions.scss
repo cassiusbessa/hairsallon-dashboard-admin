@@ -1,0 +1,41 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin minSize($width, $height) {
+  min-width: $width;
+  min-height: $height;
+}
+@mixin maxSize($width, $height) {
+  max-width: $width;
+  max-height: $height;
+}
+//-Alignment
+@mixin flexAlignment($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin status($bcg) {
+  background-color: $bcg;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  padding: 3px 0 3px 10px;
+  border-radius: 16px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin newBtn($width, $bcg:$--primary-color) {
+  background-color: $bcg;
+  color: #fff;
+  text-transform: none !important;
+  @include size($width, 40px);
+  &:hover {
+    background-color: darken($bcg, 20%);
+  }
+}
