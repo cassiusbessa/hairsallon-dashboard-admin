@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginCard from '../../Components/LoginCard';
 import './style.scss';
 
 function Login() {
