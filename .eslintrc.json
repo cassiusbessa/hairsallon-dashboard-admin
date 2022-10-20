@@ -18,5 +18,11 @@
         "react"
     ],
     "rules": {
+        "no-console": "off",
+        "react/jsx-curly-brace-presence": "off",
+        "object-curly-newline": "off",
+        "dot-notation": "off",
+        "react/prop-types": "off",
+        "max-len": 0
     }
 }
