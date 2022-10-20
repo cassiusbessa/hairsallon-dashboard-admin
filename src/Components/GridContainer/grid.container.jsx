@@ -2,7 +2,6 @@ import React from 'react';
 import { Grid } from '@mui/material';
 
 function GridContainer({ children }) {
-  console.log(children);
   return (
     <Grid container spacing={children.length}>
       {children.map((elem) => (
