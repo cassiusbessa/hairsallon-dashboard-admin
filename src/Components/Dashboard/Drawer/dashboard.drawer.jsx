@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { IconButton, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import { ChevronRight } from '@mui/icons-material';
-import { styled } from '@mui/material/styles';
+import { Divider, Typography, Box, IconButton, Container, Button, styled } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { People, Dashboard, RoomService, Bookmark, ImportContacts, ChevronRight, ChevronLeft } from '@mui/icons-material';
 
-const drawerWidth = 240;
+const menuItem = {
+  alignItems: 'center',
+};
 
 const openedMixin = (theme) => ({
-  width: drawerWidth,
+  width: theme.spacing(30),
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -24,24 +23,15 @@ const closedMixin = (theme) => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: 'hidden',
-  width: `calc(${theme.spacing(7)} + 1px)`,
+  width: `calc(${theme.spacing(5)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
+    width: `calc(${theme.spacing(5)} + 1px)`,
   },
 });
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-}));
-
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
-    width: drawerWidth,
+    width: theme.spacing(30),
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
@@ -56,71 +46,56 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-function SideBar() {
-  const [open, setOpen] = React.useState(true);
-
-  const handleDrawerClose = () => {
-    setOpen(!open);
-  };
-
+function SideBar({ children }) {
+  const [open, setOpen] = useState(false);
   return (
-    <Drawer variant="permanent" open={open}>
-      <DrawerHeader>
-        <IconButton onClick={handleDrawerClose}>
-          {<ChevronRight />}
-        </IconButton>
-      </DrawerHeader>
-      <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Drawer>
+    <Container>
+      <Drawer variant="permanent" anchor="left" open={open}>
+        <Box style={{ display: 'flex', alignItems: 'center' }}>
+          <IconButton onClick={() => setOpen(!open)}>
+            {open ? <ChevronLeft /> : <ChevronRight />}
+          </IconButton>
+          <Typography variant="h7">Hair Sallon</Typography>
+
+        </Box>
+        <Divider />
+        <Box display="flex" style={menuItem}>
+          <IconButton>
+            <Dashboard />
+          </IconButton>
+          <Typography variant="h7">Dashboard</Typography>
+        </Box>
+        <Box display="flex" style={menuItem}>
+          <IconButton>
+            <People />
+          </IconButton>
+          <Typography variant="h7">Clients</Typography>
+        </Box>
+        <Box display="flex" style={menuItem}>
+          <IconButton>
+            <ImportContacts />
+          </IconButton>
+          <Typography variant="h7">Schedules</Typography>
+        </Box>
+        <Box display="flex" style={menuItem}>
+          <IconButton>
+            <RoomService />
+          </IconButton>
+          <Typography variant="h7">Schedules</Typography>
+        </Box>
+        <Box display="flex" style={menuItem}>
+          <IconButton>
+            <Bookmark />
+          </IconButton>
+          <Typography variant="h7">Schedules</Typography>
+        </Box>
+      </Drawer>
+
+      <Box height="100vh">
+        <Button type="button" onClick={() => setOpen(!open)}>Oi</Button>
+        {children}
+      </Box>
+    </Container>
   );
 }
 
