@@ -4,7 +4,7 @@ import { Box, IconButton, Typography, Link } from '@mui/material';
 export default function DashMenu({ label, icon }) {
   return (
     <Box style={{ display: 'flex', alignItems: 'center' }}>
-      <Link href={`${label.toLowerCase()}`}>
+      <Link href={`${label.toLowerCase()}`} style={{ textDecoration: 'none', color: 'black' }}>
         <IconButton>
           {icon}
         </IconButton>

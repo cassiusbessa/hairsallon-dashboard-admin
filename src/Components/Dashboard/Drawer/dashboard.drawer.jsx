@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Divider, Typography, Box, IconButton, useTheme } from '@mui/material';
-import { People, Dashboard, RoomService, ChevronRight, ChevronLeft } from '@mui/icons-material';
+import { People, Dashboard, AutoStories, ChevronRight, ChevronLeft, AddHomeWork, ContentCut } from '@mui/icons-material';
 import * as Styled from './Styled';
 import DashMenu from '../Menu/dashboard.menu';
 
 const menuItems = [
   { label: 'Dashboard', icon: <Dashboard /> },
   { label: 'Clients', icon: <People /> },
-  { label: 'Schedules', icon: <RoomService /> },
+  { label: 'Schedules', icon: <AutoStories /> },
+  { label: 'Addresses', icon: <AddHomeWork /> },
+  { label: 'Services', icon: <ContentCut /> },
 ];
 
 function DrawerDash({ children }) {
