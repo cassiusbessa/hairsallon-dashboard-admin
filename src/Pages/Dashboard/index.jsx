@@ -1,9 +1,12 @@
 import React from 'react';
-import SideBar from '../../Components/Dashboard/Drawer/dashboard.drawer';
+import DrawerDash from '../../Components/Dashboard/Drawer/dashboard.drawer';
+import Login from '../Login';
 
 function Dashboard() {
   return (
-    <SideBar />
+    <DrawerDash>
+      <Login />
+    </DrawerDash>
   );
 }
 

@@ -8,7 +8,9 @@ function Routes() {
     <Router>
       <Routers>
         <Route path="/" element={<Login />} />
-        <Route path="/board" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/clients" element={<Dashboard />} />
+        <Route path="/schedules" element={<Dashboard />} />
       </Routers>
     </Router>
   );
