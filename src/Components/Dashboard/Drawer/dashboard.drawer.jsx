@@ -18,7 +18,6 @@ function DrawerDash({ children }) {
   return (
     <>
       <Styled.Drawer variant="permanent" anchor="left" open={open}>
-
         <Box style={{ display: 'flex', alignItems: 'center' }}>
           <IconButton onClick={() => setOpen(!open)}>
             {open ? <ChevronLeft /> : <ChevronRight />}

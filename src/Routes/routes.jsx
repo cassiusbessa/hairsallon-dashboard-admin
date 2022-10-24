@@ -11,6 +11,8 @@ function Routes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/clients" element={<Dashboard />} />
         <Route path="/schedules" element={<Dashboard />} />
+        <Route path="/addresses" element={<Dashboard />} />
+        <Route path="/services" element={<Dashboard />} />
       </Routers>
     </Router>
   );
