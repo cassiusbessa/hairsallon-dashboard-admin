@@ -20,7 +20,14 @@ const dataPie = {
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [
+        Math.round(Math.random() * 200),
+        Math.round(Math.random() * 200),
+        Math.round(Math.random() * 200),
+        Math.round(Math.random() * 200),
+        Math.round(Math.random() * 200),
+        Math.round(Math.random() * 200),
+      ],
       backgroundColor: [...fillColors],
       borderColor: [...fillColors.map((color) => color.replace('0.2', '1'))],
       borderWidth: 2,
