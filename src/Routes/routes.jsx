@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes as Routers, Route } from 'react-router-dom';
 import Login from '../Pages/Login';
 import Dashboard from '../Pages/Dashboard';
+import Building from '../Pages/building';
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
         <Route path="/schedules" element={<Dashboard />} />
         <Route path="/addresses" element={<Dashboard />} />
         <Route path="/services" element={<Dashboard />} />
+        <Route path="/building" element={<Building />} />
       </Routers>
     </Router>
   );
