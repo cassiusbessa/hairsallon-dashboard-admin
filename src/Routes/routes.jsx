@@ -3,6 +3,7 @@ import { useRoutes } from 'react-router-dom';
 import Login from '../Pages/Login';
 import Dashboard from '../Pages/Dashboard';
 import Building from '../Pages/building';
+import Clients from '../Pages/Clients';
 
 function Routes() {
   const routes = useRoutes([
@@ -14,7 +15,7 @@ function Routes() {
       element: <Dashboard />,
     }, {
       path: '/clients',
-      element: <Dashboard />,
+      element: <Clients />,
     }, {
       path: '/schedules',
       element: <Dashboard />,
