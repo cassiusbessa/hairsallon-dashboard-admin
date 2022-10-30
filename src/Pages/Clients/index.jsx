@@ -1,16 +1,23 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { Button } from '@mui/material';
 import DrawerDash from '../../Components/Dashboard/Drawer/dashboard.drawer';
 import MenuAppBar from '../../Components/Header/header.component';
-import clientSchema from '../../Schemas/clientSchema';
+import validationSchema from '../../Schemas/clientSchema';
+import TextInput from '../../Components/FormTextField/text.input.form';
 
 function Clients() {
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      nome: '',
+      telefone: '',
+      bairro: '',
+      rua: '',
+      cidade: '',
+      cep: '',
+      complemento: '',
     },
-    clientSchema,
+    validationSchema,
     onSubmit: (values) => console.log(values),
   });
 
@@ -19,90 +26,25 @@ function Clients() {
       <form onSubmit={formik.handleSubmit}>
         <fieldset>
           <legend>
-            <b>Formulário de cadastro</b>
+            <p>Formulário de Cadastro</p>
           </legend>
-          <span>Dados Pessoais</span>
-          <div className="client-form-box">
-            <label htmlFor="nome" className="client-form-label">
-              Nome
-              <input
-                className="client-form-input"
-                id="nome"
-                type="text"
-                required
+          {Object
+            .keys(formik.values)
+            .map((value) => (
+              <TextInput
+                key={value}
+                id={value}
+                formik={formik}
               />
-            </label>
-          </div>
-          <span>Endereço</span>
-          <div className="client-form-box">
-            <label htmlFor="cep" className="client-form-label">
-              Cep
-              <input
-                className="client-form-input"
-                id="cep"
-                type="number"
-                required
-              />
-            </label>
-          </div>
-          <div className="client-form-box">
-            <label htmlFor="bairro" className="client-form-label">
-              Bairro
-              <input
-                className="client-form-input"
-                id="bairro"
-                type="text"
-                required
-              />
-            </label>
-          </div>
-          <div className="client-form-box">
-            <label htmlFor="rua" className="client-form-label">
-              Rua
-              <input
-                className="client-form-input"
-                id="rua"
-                type="text"
-                required
-              />
-            </label>
-          </div>
-          <div className="client-form-box">
-            <label htmlFor="cidade" className="client-form-label">
-              Cidade
-              <input
-                className="client-form-input"
-                id="cidade"
-                type="text"
-                required
-              />
-            </label>
-          </div>
-          <div className="client-form-box">
-            <label htmlFor="complemento" className="client-form-label">
-              Complemento
-              <input
-                className="client-form-input"
-                id="complemento"
-                type="text"
-              />
-            </label>
-          </div>
-          <span>Contato</span>
-          <div className="client-form-box">
-            <label htmlFor="telefone" className="client-form-label">
-              Telefone
-              <input
-                className="client-form-input"
-                id="telefone"
-                type="tel"
-                required
-              />
-            </label>
-          </div>
-          <button type="submit">
+            ))}
+          <Button
+            className="button"
+            variant="contained"
+            type="submit"
+            fullWidth
+          >
             Cadastrar
-          </button>
+          </Button>
         </fieldset>
       </form>
     </section>

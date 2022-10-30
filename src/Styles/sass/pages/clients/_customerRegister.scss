@@ -1,0 +1,19 @@
+@import '../../variables';
+@import '../../functions';
+
+.client-form {
+  padding: 1rem;
+  fieldset {
+    border: 0.1rem solid $--lightgray;
+    padding: 0.3rem;
+  }
+  legend {
+    margin: 0.7rem;
+    color: $--company-color;
+  }
+  .form-input {
+    label {
+      padding-left: 0.6rem;
+    }
+  }
+};

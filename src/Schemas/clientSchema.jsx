@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const clientSchema = yup.object().shape({
+const validationSchema = yup.object({
   nome: yup
     .string()
     .required('Nome is required')
@@ -29,4 +29,4 @@ const clientSchema = yup.object().shape({
     .string(),
 });
 
-export default clientSchema;
+export default validationSchema;

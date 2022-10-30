@@ -32,7 +32,15 @@ function LoginCard() {
       <Paper className="form-wrap">
 
         <Box component="form" onSubmit={formik.handleSubmit} className="form-card">
-          {Object.keys(formik.values).map((value) => (<TextInput key={value} id={value} formik={formik} />))}
+          {Object
+            .keys(formik.values)
+            .map((value) => (
+              <TextInput
+                key={value}
+                id={value}
+                formik={formik}
+              />
+            ))}
           <Button
             className="button"
             variant="contained"
