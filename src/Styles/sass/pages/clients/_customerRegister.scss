@@ -1,5 +1,5 @@
-@import '../../variables';
-@import '../../functions';
+@import '../../abstracts/variables';
+@import '../../abstracts/functions';
 
 .client-form {
   padding: 1rem;
@@ -7,13 +7,9 @@
     border: 0.1rem solid $--lightgray;
     padding: 0.3rem;
   }
-  legend {
-    margin: 0.7rem;
-    color: $--company-color;
-  }
-  .form-input {
-    label {
-      padding-left: 0.6rem;
-    }
+  &-legend {
+    margin-left: 0.7rem;
+    color: $--banned-color;
+    font-size: 1.5rem;
   }
 };

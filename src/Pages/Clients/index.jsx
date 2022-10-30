@@ -25,7 +25,7 @@ function Clients() {
     <section className="client-form">
       <form onSubmit={formik.handleSubmit}>
         <fieldset>
-          <legend>
+          <legend className="client-form-legend">
             <p>Formulário de Cadastro</p>
           </legend>
           {Object

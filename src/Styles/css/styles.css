@@ -7,12 +7,22 @@
   border: 0.1rem solid lightgray;
   padding: 0.3rem;
 }
-.client-form legend {
-  margin: 0.7rem;
-  color: #055C8F;
+.client-form-legend {
+  margin-left: 0.7rem;
+  color: #333333;
+  font-size: 1.5rem;
 }
-.client-form .form-input label {
-  padding-left: 0.6rem;
+
+.form-wrap {
+  padding: 5%;
+}
+
+.llink {
+  text-align: center;
+}
+
+.LCard {
+  margin-top: 8%;
 }
 
 /*# sourceMappingURL=styles.css.map */

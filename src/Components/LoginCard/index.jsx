@@ -4,7 +4,6 @@ import * as yup from 'yup';
 import { useFormik } from 'formik';
 import TextInput from '../FormTextField/text.input.form';
 import GridContainer from '../GridContainer/grid.container';
-import './style.scss';
 
 const validationSchema = yup.object({
   email: yup
