@@ -26,7 +26,7 @@ function Clients() {
   });
 
   const clientForm = () => (
-    <section className="client-form">
+    <section className="client-form animate">
       <form onSubmit={formik.handleSubmit}>
         <fieldset>
           <legend className="client-form-legend">
@@ -68,7 +68,7 @@ function Clients() {
       {!showForm
         ? (
           <Button
-            className="button"
+            className="button animate"
             variant="contained"
             type="button"
             sx={{ top: 20, left: 20 }}
