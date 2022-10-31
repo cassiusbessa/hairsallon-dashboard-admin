@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&family=Roboto:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,400&display=swap");
+.client-form {
+  padding: 1rem;
+}
+.client-form fieldset {
+  border: 0.1rem solid lightgray;
+  padding: 0.3rem;
+}
+.client-form-legend {
+  margin-left: 0.7rem;
+  color: #333333;
+  font-size: 1.5rem;
+}
+
+.animate {
+  animation-duration: 0.75s;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1);
+  animation-fill-mode: backwards;
+}
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.form-wrap {
+  padding: 5%;
+}
+
+.llink {
+  text-align: center;
+}
+
+.LCard {
+  margin-top: 8%;
+}
+
+/*# sourceMappingURL=styles.css.map */
