@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { Button } from '@mui/material';
 import DrawerDash from '../../Components/Dashboard/Drawer/dashboard.drawer';
@@ -7,6 +7,10 @@ import validationSchema from '../../Schemas/clientSchema';
 import TextInput from '../../Components/FormTextField/text.input.form';
 
 function Clients() {
+  const [showForm, setShowForm] = useState(false);
+
+  const formStatus = () => setShowForm((prev) => !prev);
+
   const formik = useFormik({
     initialValues: {
       nome: '',
@@ -28,6 +32,14 @@ function Clients() {
           <legend className="client-form-legend">
             <p>Formulário de Cadastro</p>
           </legend>
+          <Button
+            className="button"
+            type="button"
+            sx={{ float: 'right', top: -25, fontSize: 25, height: 22 }}
+            onClick={formStatus}
+          >
+            X
+          </Button>
           {Object
             .keys(formik.values)
             .map((value) => (
@@ -53,7 +65,18 @@ function Clients() {
   return (
     <DrawerDash>
       <MenuAppBar />
-      {clientForm()}
+      {!showForm
+        ? (
+          <Button
+            className="button"
+            variant="contained"
+            type="button"
+            sx={{ top: 20, left: 20 }}
+            onClick={formStatus}
+          >
+            + Cadastrar Novo Usuário
+          </Button>
+        ) : clientForm()}
     </DrawerDash>
   );
 }
